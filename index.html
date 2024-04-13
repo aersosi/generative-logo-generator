@@ -1,0 +1,200 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Generative Logo Colors</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="description" content="">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+
+<svg id="svgPaths" xmlns="http://www.w3.org/2000/svg" style="display:none;">
+  <rect id="square" width="5" height="5" rx="0.75"/>
+  <rect id="circle" width="5" height="5" rx="2.5"/>
+  <path id="triangle"
+        d="M4.42891 4.99853H0.571088C0.147098 4.99853 -0.128664 4.55233 0.0609496 4.17311L1.98986 0.315282C2.20005 -0.105095 2.79995 -0.105094 3.01014 0.315284L4.93905 4.17311C5.12866 4.55233 4.8529 4.99853 4.42891 4.99853Z"/>
+  <path id="diamond"
+        d="M0.195134 2.0289L2.0289 0.195135C2.28908 -0.0650447 2.71092 -0.065045 2.9711 0.195134L4.80487 2.0289C5.06504 2.28908 5.06505 2.71092 4.80487 2.9711L2.9711 4.80487C2.71092 5.06504 2.28908 5.06505 2.0289 4.80487L0.195135 2.9711C-0.0650447 2.71092 -0.065045 2.28908 0.195134 2.0289Z"/>
+  <path id="pentagon"
+        d="M0.402596 1.36012L1.82998 0.232161C2.2217 -0.0773872 2.7783 -0.077387 3.17002 0.232161L4.5974 1.36012C4.9483 1.63741 5.087 2.10136 4.9449 2.52245L4.3533 4.27557C4.20731 4.70819 3.79745 5 3.33578 5H1.66422C1.20255 5 0.792686 4.70819 0.646696 4.27557L0.0550984 2.52245C-0.087002 2.10136 0.0517038 1.63741 0.402596 1.36012Z"/>
+  <path id="bowtie"
+        d="M5 4.40882V0.591181C5 0.132368 4.57601 -0.151028 4.24275 0.0850295L2.75725 1.13725C2.59891 1.2494 2.40109 1.2494 2.24275 1.13725L0.757248 0.0850292C0.423986 -0.151028 0 0.132368 0 0.591181V4.40882C0 4.86763 0.423986 5.15103 0.757248 4.91497L2.24275 3.86275C2.40109 3.7506 2.59891 3.7506 2.75725 3.86275L4.24275 4.91497C4.57601 5.15103 5 4.86763 5 4.40882Z"/>
+</svg>
+
+<div class="flex flex-col gap-4 justify-center">
+  <div id="svgContainer" class="mx-auto rounded-md"></div>
+
+  <!-- Shapes -->
+  <div class="inline-flex gap-8 mx-auto p-8 items-end">
+    <div class="inline-flex flex-col gap-2">
+      <label for="shape_1" class="text-white">First Shape</label>
+      <select id="shape_1" class="updateSVG">
+        <option value="square">Square</option>
+        <option value="circle">Circle</option>
+        <option value="triangle" selected="selected">Triangle</option>
+        <option value="diamond">Diamond</option>
+        <option value="pentagon">Pentagon</option>
+        <option value="bowtie">Bowtie</option>
+      </select>
+    </div>
+    <div class="inline-flex flex-col gap-2">
+      <label for="shape_2" class="text-white">Second Shape</label>
+      <select id="shape_2" class="updateSVG">
+        <option value="square">Square</option>
+        <option value="circle" selected="selected">Circle</option>
+        <option value="triangle">Triangle</option>
+        <option value="diamond">Diamond</option>
+        <option value="pentagon">Pentagon</option>
+        <option value="bowtie">Bowtie</option>
+      </select>
+    </div>
+    <div>
+      <button id="randomizeShapes" class="bg-white/70 hover:bg-white py-3 px-4 rounded-md">Randomize Shapes</button>
+    </div>
+  </div>
+
+  <!-- Colors -->
+  <div class="inline-flex gap-8 mx-auto p-8 items-end">
+    <div class="inline-flex flex-col gap-2">
+      <label for="color_1" class="text-white">
+        First Color
+      </label>
+      <select name="color_1" id="color_1" class="updateSVG">
+        <option value="#000000">Black</option>
+        <option value="#ffffff">White</option>
+        <option value="#ff0000" selected="selected">Red</option>
+        <option value="#ff8000">Orange</option>
+        <option value="#ffdf00">Yellow</option>
+        <option value="#bfff00">Lime</option>
+        <option value="#00ff40">Green</option>
+        <option value="#00ffbf">Aquamarine</option>
+        <option value="#00ffff">Aqua</option>
+        <option value="#00bfff">Light Blue</option>
+        <option value="#0030ff">Blue</option>
+        <option value="#8000ff">Violet</option>
+        <option value="#ff00ff">Magenta</option>
+        <option value="#ff0090">Pink</option>
+      </select>
+    </div>
+    <div class="inline-flex flex-col gap-2">
+      <label for="color_2" class="text-white">
+        Second Color
+      </label>
+      <select name="color_2" id="color_2" class="updateSVG">
+        <option value="#000000">Black</option>
+        <option value="#ffffff">White</option>
+        <option value="#ff0000">Red</option>
+        <option value="#ff8000">Orange</option>
+        <option value="#ffdf00">Yellow</option>
+        <option value="#bfff00">Lime</option>
+        <option value="#00ff40">Green</option>
+        <option value="#00ffbf">Aquamarine</option>
+        <option value="#00ffff" selected="selected">Aqua</option>
+        <option value="#00bfff">Light Blue</option>
+        <option value="#0030ff">Blue</option>
+        <option value="#8000ff">Violet</option>
+        <option value="#ff00ff">Magenta</option>
+        <option value="#ff0090">Pink</option>
+      </select>
+    </div>
+    <div>
+      <button id="randomizeColors" class="bg-white/70 hover:bg-white py-3 px-4 rounded-md">Randomize Colors</button>
+    </div>
+  </div>
+
+  <!-- Position -->
+  <div class="inline-flex gap-8 mx-auto p-8 items-end">
+    <div class="inline-flex flex-col gap-2">
+      <label for="translateSelect_1" class="text-white">
+        First Position
+      </label>
+      <select id="translateSelect_1" name="translateSelect_1" class="updateSVG">
+        <option value="1px, 1px">Top Left</option>
+        <option value="2px, 1px">Top Center</option>
+        <option value="3px, 1px">Top Right</option>
+        <option value="1px, 2px">Middle Left</option>
+        <option value="2px, 2px" selected="selected">Center</option>
+        <option value="3px, 2px">Middle Right</option>
+        <option value="1px, 3px">Bottom Left</option>
+        <option value="2px, 3px">Bottom Center</option>
+        <option value="3px, 3px">Bottom Right</option>
+      </select>
+    </div>
+    <div class="inline-flex flex-col gap-2">
+      <label for="translateSelect_2" class="text-white">
+        Second Position
+      </label>
+      <select id="translateSelect_2" name="translateSelect_2" class="updateSVG">
+        <option value="1px, 1px">Top Left</option>
+        <option value="2px, 1px">Top Center</option>
+        <option value="3px, 1px">Top Right</option>
+        <option value="1px, 2px">Middle Left</option>
+        <option value="2px, 2px" selected="selected">Center</option>
+        <option value="3px, 2px">Middle Right</option>
+        <option value="1px, 3px">Bottom Left</option>
+        <option value="2px, 3px">Bottom Center</option>
+        <option value="3px, 3px">Bottom Right</option>
+      </select>
+    </div>
+    <div>
+      <button id="randomizePosition" class="bg-white/70 hover:bg-white py-3 px-4 rounded-md">Randomize Position</button>
+    </div>
+  </div>
+
+  <!-- Position -->
+  <div class="inline-flex gap-8 mx-auto p-8 items-end">
+    <div class="inline-flex flex-col gap-2">
+      <label for="rotateSelect_1" class="text-white">
+        First Rotation
+      </label>
+      <select id="rotateSelect_1" name="rotateSelect_1" class="updateSVG">
+        <option value="0deg" selected="selected">0</option>
+        <option value="45deg">45deg</option>
+        <option value="90deg">90deg</option>
+        <option value="135deg">135deg</option>
+        <option value="180deg">180deg</option>
+      </select>
+    </div>
+    <div class="inline-flex flex-col gap-2">
+      <label for="rotateSelect_2" class="text-white">
+        Second Rotation
+      </label>
+      <select id="rotateSelect_2" name="rotateSelect_2" class="updateSVG">
+        <option value="0deg" selected="selected">0</option>
+        <option value="45deg">45deg</option>
+        <option value="90deg">90deg</option>
+        <option value="135deg">135deg</option>
+        <option value="180deg">180deg</option>
+      </select>
+    </div>
+    <div>
+      <button id="randomizeRotation" class="bg-white/70 hover:bg-white py-3 px-4 rounded-md">Randomize Rotation</button>
+    </div>
+  </div>
+  <div class="text-center">
+    <button id="downloadButton" class="bg-white/70 hover:bg-white py-3 px-4 rounded-md">Download SVG</button>
+  </div>
+</div>
+
+
+<script src="js/app.js"></script>
+</body>
+</html>
